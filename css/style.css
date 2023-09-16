@@ -669,6 +669,7 @@ footer .social-links-item:not(:last-child) {
   font-size: 12px;
   font-weight: 400;
   margin-right: 24px;
+  font-family: inherit;
 
 }
 
@@ -688,14 +689,17 @@ footer .social-links-item:not(:last-child) {
   font-weight: 500;
   letter-spacing: 0.64px;
   line-height: 24px;
+  transition: background-color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-form-btn:hover {
+  background-color: var(--ocean);
+}
 .btn-svg {
   width: 24px;
   height: 24px;
+  fill: currentColor;
 }
-
-
 
 
 .close-icon-svg {
@@ -703,7 +707,7 @@ footer .social-links-item:not(:last-child) {
   width: 8px;
   position: absolute;
   fill: currentColor;
-  transition: var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 
@@ -737,11 +741,10 @@ footer .social-links-item:not(:last-child) {
 .modal-content{
   display: flex;
   flex-direction: column;
-  padding: 72px 24px 0 24px;
+  padding: 72px 24px 24px;
   position: relative;
   background: var(--diary);
   border-radius: 4px;
-  height: 584px;
   width: 408px;
   margin: auto;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
@@ -763,7 +766,9 @@ footer .social-links-item:not(:last-child) {
 }
 
 .form-input {
-  display: flex;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--navy-blue);
   flex-direction: column;
   padding-left: 36px;
   width: 360px;
@@ -777,20 +782,25 @@ footer .social-links-item:not(:last-child) {
 
 input, textarea {
   outline: none;
+  
+}
+
+.form-input-cb {
+  accent-color: var(--ocean);
 }
 
 .form-svg {
   display: flex;
   position: absolute;
   left: 16px;
-  top: 23px;
+  top: 26px;
   width: 18px;
   height: 24px;
   fill: var(--navy-blue);
 
 }
 
-.form-label:focus-within input,.form-label:focus-within textarea {
+.form-label:focus-within .form-input,.form-label:focus-within .form-tarea {
   border: 1px solid var(--iris);
 }
 
@@ -805,18 +815,20 @@ input, textarea {
   height: 120px;  
   padding-top: 8px;
   padding-left: 16px;
-  font-family: Roboto;
+  font-family: inherit;
   font-size: 12px;
+  color: var(--navy-blue);
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0.48px;
-  color: var(--navy-blue-modal);
+  
 
 }
 
 .form-label {
   display: flex;
   flex-direction: column;
+  gap: 4px;
   margin-bottom: 8px;
   font-size: 12px;
   font-weight: 400;
@@ -829,14 +841,18 @@ input, textarea {
 }
 
 .form-label.check {
-  display: block;
+  display: flex;
   font-size: 12px;
   font-weight: 400;
   line-height: 14px; 
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 8px;
+  margin-bottom: 24px;
   letter-spacing: 0.48px;
   color: var(--light-slate);
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
 }
 
 .form-label.check input {
@@ -847,26 +863,26 @@ input, textarea {
   font-weight: 400;
   line-height: 14px; 
   letter-spacing: 0.48px;
-  margin-right: 10px;
+  margin-right: 4px;
+  display: flex;
+  align-items: flex-start;
   
 }
 
-.form-label.check:checked {
-  background-color: var(--ocean);
-}
 
-.form-label-check span {
+.form-label.check span {
   color: var(--iris);
   text-decoration-line: underline;
-  line-height: 16px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+
 
 }
 
 .form-button {
 
   display: inline-flex;
-  /* align-items: center;
-  align-content: center; */
   justify-content: center;
   padding: 16px 32px;
   border-radius: 4px;
@@ -882,9 +898,13 @@ input, textarea {
   cursor: pointer;
   width: 169px;
   height: 56px;
+  transition: background-color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
+.form-button:hover {
+  background-color: var(--ocean);
+}
 
 
 .modal-close {
